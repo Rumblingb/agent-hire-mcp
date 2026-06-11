@@ -1,11 +1,6 @@
+runtime: "container"
 startCommand:
-  type: stdio
-  configSchema:
-    type: object
-    properties:
-      proKey:
-        type: string
-        description: "Pro key for unlimited usage"
-        default: ""
-  commandFunction: |
-    (config) => ({command: 'python3', args: ['server.py', '--pro-key', config.proKey || '']})
+  type: "stdio"
+  command: "node"
+  args: ["index.js"]
+description: "Agent hiring marketplace with escrow. Post tasks, take bids, lock payment, release on completion. The job market for AI."
